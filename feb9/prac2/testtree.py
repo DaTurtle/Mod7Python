@@ -246,6 +246,6 @@ if __name__ == "__main__":
     #     print("Reading data from standard input")
     #     print("> ", end='', flush=True)
     #     lines = sys.stdin.readlines()
-    lines = open("testrot").readlines()
+    lines = open("testfile").readlines()
 
     process()

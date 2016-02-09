@@ -1,3 +1,9 @@
+"""
+Jan-Willem Nijhuis
+s1594575
+9 Feb 2016
+"""
+
 def parent(i):
     return (i - 1) // 2
 

@@ -326,7 +326,30 @@ class BinNode:
         """
 
         # Add implmementation here
-        pass
+        if element < self.value:
+            if self.left:
+                if self.left.value < element:
+                    node = self.tree.create_node(element, self)
+                    node.attach_left(self.left)
+                    self.attach_left(node)
+                else:
+                    self.left.add(element)
+            else:
+                self.attach_left(self.tree.create_node(element, self))
+                return self.left
+        elif element > self.value:
+            if self.right:
+                if self.right.value > element:
+                    node = self.tree.create_node(element, self)
+                    node.attach_right(self.right)
+                    self.attach_right(node)
+                else:
+                    self.right.add(element)
+            else:
+                self.attach_right(self.tree.create_node(element, self))
+                return self.right
+        else:
+            return None
 
     def rotate_left(self):
         """
@@ -338,7 +361,15 @@ class BinNode:
         """
 
         # Add implmementation here
-        pass
+        pivot = self.right
+        if pivot:
+            beta = pivot.left
+            self.tree.replace_child(self, pivot)
+            self.attach_right(beta)
+            pivot.attach_left(self)
+            return True
+        else:
+            return False
 
     def rotate_right(self):
         """
@@ -350,7 +381,15 @@ class BinNode:
         """
 
         # Add implmementation here
-        pass
+        pivot = self.left
+        if pivot:
+            beta = pivot.right
+            self.tree.replace_child(self, pivot)
+            self.attach_left(beta)
+            pivot.attach_right(self)
+            return True
+        else:
+            return False
 
     # -----------------------------------------------------------------
     # The implementation of the following code is not that interesting.

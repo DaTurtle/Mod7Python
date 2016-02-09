@@ -238,13 +238,14 @@ def random_test(tree, seed):
     print()
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        print("Reading data from " + sys.argv[1])
-        lines = open(sys.argv[1]).readlines()
-    else:
-        print("Usage: java adc.trees.TestTree [testfile]")
-        print("Reading data from standard input")
-        print("> ", end='', flush=True)
-        lines = sys.stdin.readlines()
+    # if len(sys.argv) > 1:
+    #     print("Reading data from " + sys.argv[1])
+    #     lines = open(sys.argv[1]).readlines()
+    # else:
+    #     print("Usage: java adc.trees.TestTree [testfile]")
+    #     print("Reading data from standard input")
+    #     print("> ", end='', flush=True)
+    #     lines = sys.stdin.readlines()
+    lines = open("testrot").readlines()
 
     process()
